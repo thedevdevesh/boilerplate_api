@@ -141,14 +141,13 @@ curl -X POST \
 
 
 curl -X POST \
-  http://localhost:3000/api/v1/surveys \
+  http://localhost:3000/surveys \
   -H 'Content-Type: application/json' \
   -d '{
     "title": "Customer Feedback Survey",
     "description": "A survey to gather feedback from customers"
   }'
 Response:
-
 
 {
   "id": 1,
