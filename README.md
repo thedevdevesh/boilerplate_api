@@ -103,36 +103,24 @@ The API provides several endpoints for managing surveys and responses. Here are 
 
 ### Survey Endpoints
 
-- `POST /api/v1/surveys`  
+- `POST /surveys`  
   Create a new survey. Requires the title and description of the survey.
-
-- `GET /api/v1/surveys`  
-  Retrieve all surveys.
-
-- `GET /api/v1/surveys/:id`  
-  Retrieve a specific survey by ID.
-
-- `PUT/PATCH /api/v1/surveys/:id`  
-  Update a survey.
-
-- `DELETE /api/v1/surveys/:id`  
-  Delete a survey.
 
 ### Response Endpoints
 
-- `POST /api/v1/surveys/:survey_id/responses`  
+- `POST surveys/:survey_id/responses`  
   Create a new response for a specific survey.
 
-- `GET /api/v1/surveys/:survey_id/responses`  
+- `GET surveys/:survey_id/responses`  
   Retrieve all responses for a specific survey.
 
-- `GET /api/v1/surveys/:survey_id/responses/:id`  
+- `GET /surveys/:survey_id/responses/:id`  
   Retrieve a specific response by ID for a survey.
 
-- `PUT/PATCH /api/v1/surveys/:survey_id/responses/:id`  
+- `PUT/PATCH /surveys/:survey_id/responses/:id`  
   Update a specific response.
 
-- `DELETE /api/v1/surveys/:survey_id/responses/:id`  
+- `DELETE /surveys/:survey_id/responses/:id`  
   Delete a specific response.
 
 ## Example API Request
@@ -141,7 +129,7 @@ Here's an example of how to create a new survey using cURL:
 
 ```bash
 curl -X POST \
-  http://localhost:3000/api/v1/surveys \
+  http://localhost:3000/surveys \
   -H 'Content-Type: application/json' \
   -d '{
     "survey": {
