@@ -1,0 +1,21 @@
+BASIC
+1. An API to create surveys.
+2. An API to store the survey responses.
+3. An API to fetch survey responses.
+Next
+1. The user filling out the form should be able to Edit Responses multiple times after
+submission.
+2. An API to List all the responses submitted by a user for a form.
+
+=> create a model name survey with attribute name, description, user_id
+
+=> create a survey controller with condition that we need user_id to fill the survey form
+
+=>user with valid user_id can update the survey form
+
+=> show index action with conditon of user_id 
+
+
+rails generate model Survey title:string description:text
+rails generate model Question survey:references content:string
+rails generate model Response survey:references user_id:integer answers:json
