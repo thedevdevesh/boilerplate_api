@@ -1,8 +1,8 @@
-# Boilerplate API
+# Survey Management API
 
 ## Description
 
-Boilerplate API is a Ruby on Rails application that provides a robust API for managing surveys and responses. It allows users to create surveys, submit responses, and manage survey data. This project is designed to be a starting point for building survey-based applications with an easy-to-use API structure.
+Survey Management API is a Ruby on Rails application that provides a robust API for managing surveys and responses. It allows users to create surveys, submit responses, and manage survey data. This project is designed to be a starting point for building survey-based applications with an easy-to-use API structure.
 
 ### Key Features:
 - **Survey Management**: Users can create surveys with questions and options.
