@@ -1,0 +1,638 @@
+{
+	"info": {
+		"_postman_id": "55eac7ca-9ecb-4867-b914-86ffd17df68f",
+		"name": "boilerplate_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33641297"
+	},
+	"item": [
+		{
+			"name": "survey",
+			"item": [
+				{
+					"name": "create survey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"survey\": {\n    \"title\": \"Customer Feedback\",\n    \"description\": \"We value your feedback!\",\n    \"questions_attributes\": [\n      { \"content\": \"How satisfied are you with our service?\" },\n      { \"content\": \"What can we improve?\" }\n    ]\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example of create survey",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"survey\": {\n    \"title\": \"Customer Feedback\",\n    \"description\": \"We value your feedback!\",\n    \"questions_attributes\": [\n      { \"content\": \"How satisfied are you with our service?\" },\n      { \"content\": \"What can we improve?\" }\n    ]\n  }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/surveys",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"surveys"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"702cf5727ec482fc4fd6733f71cadd60\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "943fcad1-af06-4917-8c53-361ca9d160c1"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.098704"
+								},
+								{
+									"key": "server-timing",
+									"value": "sql.active_record;dur=10.42, start_processing.action_controller;dur=0.01, start_transaction.active_record;dur=0.00, transaction.active_record;dur=5.02, process_action.action_controller;dur=40.56"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"Customer Feedback\",\n    \"description\": \"We value your feedback!\",\n    \"created_at\": \"2024-12-20T12:00:30.229Z\",\n    \"updated_at\": \"2024-12-20T12:00:30.229Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "store survey response",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// by using url /surveys/survey_id/responses\n\n{\n  \"response\": {\n    \"user_id\": 2,\n    \"answers\": {\n      \"1\": \"Very satisfied checked for user 2\",\n      \"2\": \"Improve response time\"\n    }\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/surveys/2/responses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"2",
+								"responses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example survey store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// by using url /surveys/survey_id/responses\n\n{\n  \"response\": {\n    \"user_id\": 1,\n    \"answers\": {\n      \"1\": \"Very satisfied\",\n      \"2\": \"Improve response time\"\n    }\n  }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/surveys/1/responses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"surveys",
+										"1",
+										"responses"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"130daad88f69126950ed74fd6b683a44\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e3e9d719-ee90-49c2-8f30-a1d3cdeb9fb1"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.022715"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=8.33, instantiation.active_record;dur=0.07, start_transaction.active_record;dur=0.00, transaction.active_record;dur=6.95, process_action.action_controller;dur=14.56"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"survey_id\": 1,\n    \"user_id\": 1,\n    \"answers\": {\n        \"1\": \"Very satisfied\",\n        \"2\": \"Improve response time\"\n    },\n    \"created_at\": \"2024-12-20T12:03:10.561Z\",\n    \"updated_at\": \"2024-12-20T12:03:10.561Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Fetch Survey Response",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true,
+							"content-length": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// by using the url /surveys/survey_id/responses\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/surveys/2/responses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"2",
+								"responses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get survey response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// by using the url /surveys/survey_id/responses\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/surveys/1/responses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"surveys",
+										"1",
+										"responses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"7cf8071213c73846678d9565de8c2c56\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "55dd2fb9-064b-490c-bf8e-c668d0e1637f"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.030955"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=5.65, instantiation.active_record;dur=8.69, process_action.action_controller;dur=28.60"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"survey_id\": 1,\n        \"user_id\": 1,\n        \"answers\": {\n            \"1\": \"Very satisfied\",\n            \"2\": \"Improve response time\"\n        },\n        \"created_at\": \"2024-12-20T12:03:10.561Z\",\n        \"updated_at\": \"2024-12-20T12:03:10.561Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Edit/Update Response",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// by using this url /surveys/:survey_id/responses/:id\n\n{\n  \"response\": {\n    \"answers\": {\n      \"1\": \"Satisfied\",\n      \"2\": \"Better product quality\"\n    }\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/surveys/1/responses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"surveys",
+								"1",
+								"responses",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit/Update Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// by using this url /surveys/:survey_id/responses/:id\n\n{\n  \"response\": {\n    \"answers\": {\n      \"1\": \"Satisfied\",\n      \"2\": \"Better product quality\"\n    }\n  }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/surveys/1/responses/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"surveys",
+										"1",
+										"responses",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"56712dda1d11937851e274028078031f\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5f1ed5f8-8619-47c7-a381-995de83fdf54"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.059661"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=5.15, instantiation.active_record;dur=4.28, start_transaction.active_record;dur=0.00, transaction.active_record;dur=1.66, process_action.action_controller;dur=15.78"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"survey_id\": 1,\n    \"answers\": {\n        \"1\": \"Satisfied\",\n        \"2\": \"Better product quality\"\n    },\n    \"id\": 1,\n    \"user_id\": 1,\n    \"created_at\": \"2024-12-20T12:03:10.561Z\",\n    \"updated_at\": \"2024-12-20T12:17:44.167Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User All Responses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true,
+							"content-length": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// by using this url /surveys/survey_id/responses/user_responses?user_id=\n\n// here user_id used as query params",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/surveys/1/responses/user_responses?user_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"",
+								"surveys",
+								"1",
+								"responses",
+								"user_responses"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get particular user responses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// by using this url /surveys/survey_id/responses/user_responses?user_id=\n\n// here user_id used as query params",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/surveys/1/responses/user_responses?user_id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"",
+										"surveys",
+										"1",
+										"responses",
+										"user_responses"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"ef9639b86a75ab79c41f2585380bc034\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ea00ffdc-b53d-4f0a-a6b8-9ec14af51bde"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.005097"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=0.34, instantiation.active_record;dur=0.12, process_action.action_controller;dur=2.98"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"survey_id\": 1,\n        \"user_id\": 1,\n        \"answers\": {\n            \"1\": \"Satisfied\",\n            \"2\": \"Better product quality\"\n        },\n        \"created_at\": \"2024-12-20T12:03:10.561Z\",\n        \"updated_at\": \"2024-12-20T12:17:44.167Z\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
